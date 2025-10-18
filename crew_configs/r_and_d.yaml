@@ -1,0 +1,13 @@
+crew:
+  name: R&D
+  description: "Research and Development Crew"
+  agents:
+    - role: Researcher
+      skills: ["idea_generation", "market_analysis"]
+      max_tasks: 5
+    - role: Engineer
+      skills: ["code_write", "prototype_build"]
+      max_tasks: 10
+  goals:
+    - "Develop AI-driven products"
+    - "Maintain high code quality"

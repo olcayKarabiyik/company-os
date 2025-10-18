@@ -1,0 +1,9 @@
+crew:
+  name: QA
+  description: "Quality Assurance Crew"
+  agents:
+    - role: Tester
+      skills: ["test_execution", "reporting"]
+      max_tasks: 10
+  goals:
+    - "Ensure product quality"

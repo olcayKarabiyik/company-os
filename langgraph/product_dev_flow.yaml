@@ -1,0 +1,29 @@
+nodes:
+  - id: receive_idea
+    type: start
+    action: log("Idea received")
+  - id: analyze_market
+    type: task
+    action: crewai.run_task("R&D.Researcher", "market_analysis")
+  - id: build_prototype
+    type: task
+    action: crewai.run_task("R&D.Engineer", "prototype_build")
+  - id: evaluate
+    type: decision
+    condition: "prototype_quality > 0.7"
+  - id: hire_more_engineers
+    type: action
+    action: supervisor.trigger('hire_agent', role='Engineer', skills=['python', 'pytest'])
+  - id: deploy
+    type: task
+    action: crewai.run_task("Release.Engineer", "deploy")
+edges:
+  - from: receive_idea
+    to: analyze_market
+  - from: analyze_market
+    to: build_prototype
+  - from: build_prototype
+    to: evaluate
+  - from: evaluate
+    true_to: deploy
+    false_to: hire_more_engineers

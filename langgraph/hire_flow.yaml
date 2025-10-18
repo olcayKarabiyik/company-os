@@ -1,0 +1,20 @@
+nodes:
+  - id: start_hire
+    type: start
+    action: log('start hire flow')
+  - id: create_profile
+    type: task
+    action: orchestrator.create_profile
+  - id: probation
+    type: task
+    action: orchestrator.run_probation
+  - id: finalize
+    type: decision
+    condition: 'probation_score > 0.8'
+edges:
+  - from: start_hire
+    to: create_profile
+  - from: create_profile
+    to: probation
+  - from: probation
+    to: finalize

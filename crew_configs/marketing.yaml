@@ -1,0 +1,9 @@
+crew:
+  name: Marketing
+  description: "Marketing Crew"
+  agents:
+    - role: Marketer
+      skills: ["campaign", "copywriting"]
+      max_tasks: 5
+  goals:
+    - "Launch product campaigns"

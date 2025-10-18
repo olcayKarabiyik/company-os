@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: agent-template
+spec:
+  containers:
+    - name: agent
+      image: company-os/agent-template:latest

@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+pyyaml
+langchain
+langgraph
+crewai
+kubernetes
+requests
+weaviate-client
